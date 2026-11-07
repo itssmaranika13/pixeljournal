@@ -1,0 +1,285 @@
+.dashboard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  padding: 1rem;
+  overflow: visible;
+}
+
+.dashboard-greeting {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.year-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.date-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+/* "Enter Data" button — sits at the right edge of the date row */
+.enter-data-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.35rem 0.85rem;
+  background-color: var(--accent-green);
+  color: #000000;
+  border: 1px solid var(--accent-green);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.enter-data-btn:hover {
+  background-color: var(--accent-green);
+  color: #000000;
+}
+
+.year-control {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.date-control {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.year-nav-btn {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.year-nav-btn:hover:not(:disabled) {
+  color: var(--text-primary);
+}
+
+.year-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.date-nav-btn {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 20;
+}
+
+.date-nav-btn:hover {
+  color: var(--text-primary);
+}
+
+.current-year {
+  font-size: 1.35rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  min-width: 60px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.displayed-date {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  color: #f5f5f5;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 20;
+}
+
+.section-label {
+  margin: 0 0 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Category filter pills */
+.category-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  padding: 0.3rem 0.6rem;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-size: 0.68rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.filter-pill:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--accent-green);
+}
+
+.filter-pill.active {
+  background-color: var(--accent-green-dark);
+  border-color: var(--accent-green);
+  color: var(--text-primary);
+}
+
+.filter-pill-emoji {
+  font-size: 0.75rem;
+}
+
+.dashboard-subcategories {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.subcategories-label {
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  margin-right: 0.25rem;
+}
+
+.dashboard-subcategory {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  font-size: 0.68rem;
+}
+
+.dashboard-subcategory-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.dashboard-subcategory.saved {
+  color: var(--text-primary);
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 3rem auto;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.empty-state p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+}
+
+.loading-container p {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 0.75rem;
+  }
+
+  .year-header {
+    gap: 0.5rem;
+  }
+
+  .current-year {
+    font-size: 1.2rem;
+  }
+
+  .category-filters {
+    gap: 0.3rem;
+    justify-content: center;
+  }
+
+  .filter-pill {
+    padding: 0.3rem 0.55rem;
+    font-size: 0.65rem;
+  }
+
+  .empty-state {
+    padding: 3rem 1.5rem;
+  }
+}

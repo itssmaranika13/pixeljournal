@@ -1,0 +1,217 @@
+.year-calendar {
+  width: 100%;
+  overflow: visible;
+}
+
+/* Month label positioned above first column */
+.graph-month-label {
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -0.5rem;
+}
+
+/* Contribution grid layout */
+.contribution-graph {
+  display: flex;
+  gap: 3px;
+  overflow: visible;
+  padding: 2rem 0 0.45rem 0;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.month-group {
+  display: flex;
+  gap: 3px;
+  flex: 1;
+}
+
+.month-group.month-gap-after {
+  margin-right: clamp(8px, 4vw, 24px);
+}
+
+.graph-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+}
+
+/* Month label positioned above 3rd (middle) week */
+.graph-month-label {
+  font-size: 0.75rem;
+  color: #918f8f;
+  height: 0;
+  display: flex;
+  align-items: flex-end;
+  font-weight: 600;
+  margin-bottom: 0;
+  position: absolute;
+  width: auto;
+  text-align: center;
+  transform: translateY(-100%);
+  left: 50%;
+  top: 0;
+  white-space: nowrap;
+  padding-bottom: 2px;
+}
+
+.graph-days {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.graph-pixel {
+  width: 12px;
+  height: 12px;
+  background-color: var(--default-grey);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.graph-pixel.empty {
+  background-color: transparent;
+}
+
+.graph-pixel.has-entry {
+  opacity: 1;
+}
+
+.graph-pixel:not(.empty):hover {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: -1px;
+}
+
+.graph-pixel.today {
+  outline: 1px solid var(--warning);
+  outline-offset: 1px;
+  box-shadow: 0 0 6px rgba(255, 167, 38, 0.5);
+}
+
+.graph-pixel.selected {
+  outline: 1px solid var(--warning);
+  outline-offset: 1px;
+  box-shadow: 0 0 6px rgba(255, 167, 38, 0.5);
+}
+
+.graph-pixel.today:not(.selected) {
+  outline: 1px solid rgba(140, 140, 140, 0.7);
+  outline-offset: 1px;
+  box-shadow: 0 0 4px rgba(140, 140, 140, 0.3);
+}
+
+/* Weekday labels */
+.weekday-labels {
+  display: none;
+}
+
+.weekday-label {
+  height: 12px;
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  line-height: 12px;
+}
+
+.weekday-label.placeholder {
+  visibility: hidden;
+}
+
+/* Graph container */
+.graph-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Legend */
+.calendar-legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.legend-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legend-name {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .contribution-graph {
+    gap: 0.5px;
+  }
+
+  .month-group {
+    gap: 0.5px;
+  }
+
+  .graph-column {
+    gap: 2px;
+  }
+
+  .graph-days {
+    gap: 2px;
+  }
+
+  .graph-pixel {
+    width: 8px;
+    height: 8px;
+  }
+
+  .weekday-labels {
+    gap: 2px;
+    margin-right: 6px;
+  }
+
+  .weekday-label {
+    height: 6px;
+    font-size: 0.48rem;
+  }
+
+  .legend-color {
+    width: 9px;
+    height: 9px;
+  }
+
+  .calendar-legend {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
