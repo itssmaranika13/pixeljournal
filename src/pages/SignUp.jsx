@@ -23,7 +23,7 @@ export default function SignUp() {
       <hr style={{ border: "none", borderTop: "1px solid #999", margin: "0 0 40px 0" }} />
 
       <div style={containerStyle}>
-        <img src="/image.png" alt="batman_cute" style={{ maxWidth: "100%", height: "auto" }} />
+        <img src="./image.png" alt="batman_cute" style={{ maxWidth: "100%", height: "auto" }} />
         <br />
         The feature you are looking for is currently unavailable. We apologise
         for the inconvenience. Please try again later.
